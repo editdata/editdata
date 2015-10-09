@@ -1,6 +1,6 @@
 {
   "name": "editdata",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "main.js",
   "bin": {
@@ -36,17 +36,17 @@
     "data-editor": "editdata/data-editor",
     "data-format": "editdata/data-format",
     "data-grid": "editdata/data-grid",
+    "electron-prebuilt": "^0.33.6",
     "leveldown": "^1.4.1",
     "levelup": "^1.2.1",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "tap-spec": "^4.1.0",
-    "tape": "^4.2.1",
     "virtual-dom": "^2.1.1",
     "xhr": "^2.1.0"
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.33.6",
-    "sheetify": "^2.0.3"
+    "sheetify": "^2.0.3",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.1"
   }
 }
