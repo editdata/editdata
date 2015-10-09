@@ -1,0 +1,84 @@
+html,
+body {
+  font: 18px/1.5 'Source Sans Pro', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  color: #444;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+a:hover, a:focus {
+  color: #000;
+}
+
+header {
+  width: 100%;
+  background-color: #f2f2f0;
+  padding: 10px 0px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #e2e2e0;
+}
+
+header .site-title {
+  font-size: 20px;
+  line-height: 1;
+  margin: 5px 0px 0px 0px;
+  display: inline-block;
+}
+
+header .site-title a {
+  font-size: 20px;
+}
+
+#app, #editor-wrapper, .view-wrapper, #map-container, #map {
+  width: 100%;
+  height: 100%;
+}
+#editor-inner {
+  position: absolute;
+  overflow: scroll;
+}
+.editor-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  padding
+}
+
+.view-choice {
+  display: inline;
+  height: 39px;
+  line-height: 40px;
+  border-radius: 0px;
+  border: 0px;
+  font-size: 13px;
+  outline: none;
+}
+
+.view-choice:hover,
+.view-choice:focus {
+  border: 0px;
+  background-color: #efefef;
+}
+
+.view-wrapper {
+  position: fixed;
+  top: 40px;
+}
