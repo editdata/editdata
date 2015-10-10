@@ -10,14 +10,14 @@ This is unfinished! Expect a full release along with a new version of [editdata.
 
 Expect the command-line api to change.
 
-## editdata.org
+## [editdata.org](http://editdata.org)
 
 Looking for an online service for editing CSV & JSON files? Try out [editdata.org](http://editdata.org).
 
 ## Install
 
 ```
-npm install -g editdata/editdata
+npm install -g editdata
 ```
 
 ## Usage
