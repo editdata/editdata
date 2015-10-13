@@ -7,6 +7,9 @@ var createStore = require('redux').createStore
 var minimist = require('minimist')
 var createUI = require('./lib/ui')
 
+var appEl = document.getElementById('app')
+var editor = DataEditor(appEl, {})
+
 var views = {
   grid: require('data-grid')(),
   map: require('data-map')({
@@ -44,9 +47,6 @@ ipc.on('args', function (args) {
     render(store.getState())
   })
 })
-
-var appEl = document.getElementById('app')
-var editor = DataEditor(appEl, {})
 
 function getData (callback) {
   var state = store.getState()
