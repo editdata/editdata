@@ -31,7 +31,6 @@ store.subscribe(function () {
 })
 
 views.map.addEventListener('load', function (node) {
-  console.log('map load', store.getState())
   render(store.getState())
 })
 
@@ -82,7 +81,6 @@ function getData (callback) {
 }
 
 function render (state) {
-  console.log('render', state)
   if (state) {
     var view = views[state.view].render(state)
     var ui = createUI(state)
