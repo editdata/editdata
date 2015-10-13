@@ -36,13 +36,16 @@
     "data-editor": "editdata/data-editor",
     "data-format": "editdata/data-format",
     "data-grid": "editdata/data-grid",
+    "data-map": "editdata/data-map",
     "electron-prebuilt": "^0.33.6",
     "leveldown": "^1.4.1",
     "levelup": "^1.2.1",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
+    "redux": "^3.0.2",
     "virtual-dom": "^2.1.1",
-    "xhr": "^2.1.0"
+    "xhr": "^2.1.0",
+    "xtend": "^4.0.0"
   },
   "devDependencies": {
     "sheetify": "^2.0.3",
