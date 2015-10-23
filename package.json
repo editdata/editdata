@@ -7,7 +7,7 @@
     "editdata": "cli.js"
   },
   "scripts": {
-    "postinstall": "cd node_modules/leveldown && HOME=~/.electron-gyp node-gyp rebuild --target=0.33.6 --arch=x64 --dist-url=https://atom.io/download/atom-shell",
+    "postinstall": "cd node_modules/leveldown && HOME=~/.electron-gyp node-gyp rebuild --target=0.34.0 --arch=x64 --dist-url=https://atom.io/download/atom-shell",
     "bundle-css": "sheetify assets/deps.css > assets/bundle.css",
     "bundle": "npm run bundle-css",
     "test": "tape tests/*.js | tap-spec",
@@ -34,10 +34,11 @@
   "dependencies": {
     "csskit": "^1.1.1",
     "data-editor": "editdata/data-editor",
+    "data-form": "github:editdata/data-form",
     "data-format": "editdata/data-format",
     "data-grid": "editdata/data-grid",
     "data-map": "editdata/data-map",
-    "electron-prebuilt": "^0.33.6",
+    "electron-prebuilt": "^0.34.0",
     "leveldown": "^1.4.1",
     "levelup": "^1.2.1",
     "minimist": "^1.2.0",

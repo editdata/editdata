@@ -3,6 +3,7 @@ var ipc = require('ipc')
 var request = require('xhr')
 var h = require('virtual-dom/h')
 var DataEditor = require('data-editor')
+var dataForm = require('data-form')()
 var createStore = require('redux').createStore
 var minimist = require('minimist')
 var createUI = require('./lib/ui')
@@ -22,7 +23,8 @@ var views = {
 var store = createStore(require('./lib/reducers'), {
   view: 'grid',
   properties: {},
-  data: []
+  data: [],
+  activeRow: null
 })
 
 store.subscribe(function () {
@@ -30,11 +32,25 @@ store.subscribe(function () {
   render(state)
 })
 
+dataForm.addEventListener('close', function (e) {
+  store.dispatch({ type: 'active_row', row: null })
+})
+
 views.map.addEventListener('load', function (node) {
   render(store.getState())
 })
 
-views.grid.addEventListener('click', function (e, row, key, value) {})
+views.grid.addEventListener('click', function (e, row, key, value) {
+  store.dispatch({
+    type: 'active_row',
+    row: {
+      data: row,
+      element: e.target
+    }
+  })
+  document.querySelector('#data-form-field-' + key).focus()
+})
+
 views.grid.addEventListener('focus', function (e, row, key, value) {})
 views.grid.addEventListener('blur', function (e, row, key, value) {})
 views.grid.addEventListener('input', function (e, row, key, value) {})
@@ -69,9 +85,14 @@ function getData (callback) {
 }
 
 function render (state) {
+  var elements = []
+  elements.push(createUI(state, views))
   var view = views[state.view].render(state)
-  var ui = createUI(state, views)
-  editor.render([ui, h('div.view-wrapper', [view])], state)
+  var viewWrapper = 'div.view-wrapper'
+  viewWrapper += state.activeRow ? '.form-open' : '.form-closed'
+  elements.push(h(viewWrapper, [view]))
+  if (state.activeRow) elements.push(dataForm.render(state))
+  editor.render(elements, state)
 }
 
 render(store.getState())
